@@ -1,0 +1,13 @@
+<html>
+<head>
+<title> Horizontal line example </title>
+<head>
+
+<body>
+<p> This is paragraph one and shoud be on top </p>
+<hr width ="100%" size=10 noshade color="blue"/>
+
+<p> This is paragraph two and should be at bottom </p>
+</body>
+</html>
+

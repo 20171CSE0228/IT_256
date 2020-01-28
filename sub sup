@@ -1,0 +1,9 @@
+<html>
+<head> 
+<title>  sub sup example  </title>
+<body>
+example for sub sup
+<p>x<sup>2</sup><sub>3</sub>+y<sup>2</sup> <sub>3</sub></p>
+</body>
+</html>
+

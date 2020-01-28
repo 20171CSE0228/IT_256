@@ -1,0 +1,12 @@
+<html>
+<head>
+<title> Centering example</title>
+<body>
+<p>this is not in center</p>
+
+<center> 
+<p> This text is in center </p>
+</center>
+</body>
+</html>
+

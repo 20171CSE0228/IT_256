@@ -1,0 +1,14 @@
+<html>
+<head>
+<title> Preserve formatting example </title>
+</head>
+<body>
+<pre>
+	function testFunction(strText){
+		alert(strText)
+	}
+</pre>
+</body>
+</bod>
+</html>
+
