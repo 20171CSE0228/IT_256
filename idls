@@ -1,0 +1,14 @@
+<html>
+<head> 
+<title> inserted text example  </title>
+<body>
+
+<ins> this is ins </ins> <br>
+<del> this is deleted </del> <br>
+<big> this is bigger </big> <br>
+<small> this is smaller </small>
+
+
+</body>
+</html>
+
