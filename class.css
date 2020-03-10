@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> class css </title>
+
+p.one{
+border-style:solid;
+border-color:red;
+}
+
+p.two
+border-style:solid;
+border-color:green;
+}
+
+p.three{
+border-style:solid;
+border-color:red green yellow blue;
+}
+</head>
+
+
