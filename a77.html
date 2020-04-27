@@ -1,0 +1,330 @@
+<html>
+<head>
+<title>Js Validation</title>
+<style>
+</style>
+<script type="text/javascript">
+function validateForm()
+{
+var name=document.getElementById("Name").value;
+var age=document.getElementById("Age").value;
+var gender= document.getElementsByName("gender");
+var yop=document.getElementById("YOP").value;
+var adress=document.getElementById("add").value;
+var e = document.getElementById("specialization");
+var strUser = e.options[e.selectedIndex].value;
+var no=document.getElementById("phone").value;
+var x=document.getElementById("e").value;
+var uid=document.getElementById("UID").value;
+var pwd=document.getElementById("PWD").value;
+var cpwd=document.getElementById("CPWD").value;
+
+
+<!-- 1.name-->
+if(name=="")
+{
+alert("Name field empty");
+Name.focus();
+return false;
+}
+else
+{
+for(i=0;i<name.length;i++)
+{
+if(!((name.charAt(i)>='a'&&name.charAt(i)<='z')||
+(name.charAt(i)>='A'&&name.charAt(i)<='Z')))
+{
+alert("enter alphabets only in name field");
+document.getElementById("Name").value="";
+Name.focus();
+return false;
+}
+}
+}
+if(name.length<3||name.length>10)
+{
+alert("username size should be between 3 and 10 ");
+document.getElementById("Name").value="";
+Name.focus();
+return false;
+}
+
+<!-- 2.mail-->
+if(x=="")
+{
+alert("email field empty");
+return false;
+}
+else
+{
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+{
+alert("Not a valid e-mail address");
+return false;
+}
+
+
+<!-- 3.age-->
+
+if(age=="")
+{
+alert("Age field empty");
+Age.focus();
+return false;
+}
+if(age<20||age>80)
+{
+alert("Age value between 20 and 80 ");
+Age.focus();
+return false;
+}
+else
+{
+for(i=0;i<age.length;i++)
+{
+if(!(age.charAt(i)>='0'&&age.charAt(i)<='9'))
+{
+alert("enter number only in age field");
+Age.focus();
+return false;
+}
+}
+}
+
+<!-- 4.gender-->
+
+if ( (gender[0].checked == false ) && ( gender[1].checked == false
+) )
+{
+alert ( "Please choose your Gender: Male or Female" );
+return false;
+}
+
+<!-- 5.phone-->
+
+if(phno=="")
+{
+alert("phone no field empty");
+return false;
+}
+if(no.length>10||no.length<10)
+{
+alert("invalid phone number");
+return false;
+}
+else
+{
+for(i=0;i<no.length;i++)
+{
+if(!(no.charAt(i)>='0'&&no.charAt(i)<='9'))
+{
+alert("enter only numbers in phone field");
+return false;
+}
+}
+}
+
+<!-- 1.6 address -->
+
+if(adress=="")
+{
+alert("Address field empty");
+return false;
+}
+
+<!-- 5.1 YOP -->
+if(yop=="")
+{
+alert("Year of pass field empty");
+YOP.focus();
+return false;
+}
+else if(yop=!2020 && yop=!2022)
+{
+alert("NOT ELIGIBLE TO REGISTER")
+YOB.focus();
+document.getElementById("YOp").value="";
+return false;
+}
+
+
+
+
+
+
+
+
+<!-- 4.1 specialization -->
+
+if(strUser==0)
+{
+alert("please select branch");
+return false;
+}
+
+
+</script>
+</head>
+
+<!-- ******* -->
+<body>
+<center>
+
+<table border="0" bgcolor="skyblue">
+<form name="UserReg" action="User.html" method="post" onsubmit="return validateForm()">
+
+
+
+<!-- *************************-->
+
+
+<!-- 1. personal details -->
+
+<tr>
+<td height="28" align="right">First Name :&nbsp;</td>
+<td height="28"><input type="text" id="Name" size="25" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Mail-id :&nbsp;</td>
+<td height="28"><input type="email" id="mail" size="25" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Age :&nbsp;</td>
+<td height="28"><input type="text" id="Age" size="25" /></td>
+</tr>
+
+<tr>
+<td height="28" align="right">Gender :&nbsp;</td>
+<td height="28"><input type="radio" name="gender" value="male">
+Male
+<input type="radio" name="gender" value="female"> Female</td>
+</tr>
+
+
+<tr>
+<td height="28" align="right">Mob_No :&nbsp;</td>
+<td height="28"><input type="text" id="phone" size="25" /><td>
+</tr>
+
+
+<tr>
+<td height="28" align="right" valign="top">Adress :&nbsp;
+</td>
+<td ><textarea rows="3" cols="15" id="ad"></textarea><td>
+</tr>
+
+<!-- 2.upload section ****************** -->
+
+<tr>
+<td height="28" align="right">Photo upload :&nbsp;</td>
+<td height="28"><input type="file" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right"> Signature upload :&nbsp;</td>
+<td height="28"><input type="file" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Resume upload :&nbsp;</td>
+<td height="28"><input type="file" />
+</td>
+</tr>
+
+<!-- 3. mark section   ********************************** -->
+
+<tr>
+<td height="28" align="right">Tenth :&nbsp;</td>
+<td height="28"><input type="number" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">PUC :&nbsp;</td>
+<td height="28"><input type="number" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Degree :&nbsp;</td>
+<td height="28"><input type="number" />
+</td>
+</tr>
+
+
+<!-- 4. specialization ***************** -->
+
+<tr>
+<td height="28" align="right">Specialization :&nbsp;</td>
+<td height="28">
+
+<select id="specialization">
+
+<option value="0">select</option>
+<option value="1">CSE</option>
+<option value="2">IT</option>
+<option value="3" >ECE</option>
+<option value="4">EEE</option>
+<option value="5">CIVIL</option>
+<option value="6">MECHANICAL</option>
+</select>
+</td>
+</tr>
+
+
+<!-- 5 YOP DOB*********************************** -->
+
+<tr>
+<td height="28" align="right">YOP :&nbsp;</td>
+<td height="28"><input type="date" id="yop" size="25" /></td>
+</tr>
+
+<tr>
+<td height="28" align="right">DOB :&nbsp;</td>
+<td height="28"><input type="date" id="dob" size="25" /><td>
+</tr>
+
+<!-- 6. tech skills ************************ -->
+
+
+
+
+<tr>
+<td height="28" align="right"> Technical skills :&nbsp;</td>
+
+
+<td height="28"><input type="checkbox" >java
+
+<input type="checkbox" > c
+
+<input type="checkbox"> c++
+
+<input type="checkbox"> DBMS
+
+<input type="checkbox"> CCNA
+
+</tr>
+
+
+<!-- 7.  submit & reset**********************-->
+
+<tr>
+<td height="28"></td> <br>
+<td height="28"><input type="submit" value="submit" name="submit" /></td> <br>
+
+<td height="28"> <input type="reset" value="reset" name="reset" /></td>
+</tr>
+
+</form>
+</table>
+</center>
+</body>
+</html>

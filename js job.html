@@ -1,0 +1,394 @@
+<html>
+<head>
+ <title>Js Validation job </title>     
+<style>
+
+body {
+  background-image: url('bg-10-full.jpg');
+}
+
+
+</style>
+
+ <script type="text/javascript">
+function validateForm()
+{
+    var name=document.getElementById("Name").value;
+	var x=document.getElementById("e").value;
+	var age=document.getElementById("Age").value;	
+	var gender= document.getElementsByName("gender");
+	var no=document.getElementById("phone").value;
+	var adress=document.getElementById("ad").value;
+	var e = document.getElementById("state");
+	var strUser = e.options[e.selectedIndex].value;
+	var photo=document.getElementById("PHOTO").value;
+	var sign =document.getElementById("SIGN").value;
+	var resume =document.getElementById("RESUME").value;
+	var yop=document.getElementById("YOP").value;
+	var dob=document.getElementById("DOB").value;
+	var skill= document.getElementsByName("skill");
+	var ten=document.getElementById("TEN").value;
+	var puc=document.getElementById("PUC").value;
+	var degree=document.getElementById("DEGREE").value;
+
+     if(name=="")
+		{
+			alert("Name field empty");
+			Name.focus();
+			return false;
+		}
+	  
+	  
+	 else
+		{
+			for(i=0;i<name.length;i++)
+				{
+					if(!((name.charAt(i)>='a'&&name.charAt(i)<='z')||
+						(name.charAt(i)>='A'&&name.charAt(i)<='Z')))
+							{
+								alert("enter alphabets only in name field");
+								document.getElementById("Name").value="";
+								Name.focus();
+								return false;
+							}
+				}
+		}
+	
+	if(name.length<3||name.length>10)
+	{
+		alert("username size should be between 3 and 10 ");
+		document.getElementById("Name").value="";
+		Name.focus();
+		return false;
+	}
+
+
+	if(x=="")
+	{
+		alert("email field empty");
+		return false;
+	}
+	else
+	{
+		var atpos=x.indexOf("@");
+		var dotpos=x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+			{
+				alert("Not a valid e-mail address");
+				return false;
+			}
+	}
+
+
+
+
+
+
+	if(age=="")
+		{
+			alert("Age field empty");
+			Age.focus();
+			return false;
+		}
+	if(age<20||age>80)
+	{
+		alert("Age value between 20 and 80 ");
+		Age.focus();
+		return false;
+	}
+	else
+	{
+		for(i=0;i<age.length;i++)
+		{
+			if(!(age.charAt(i)>='0'&&age.charAt(i)<='9'))
+				{
+					alert("enter number only in age field");
+					Age.focus();
+					return false;
+				}
+		}
+	}
+
+
+
+	if ( (gender[0].checked == false ) && ( gender[1].checked == false))
+	{
+		alert ( "Please choose your Gender: Male or Female" );
+		return false;
+	}
+
+
+
+	if(no=="")
+	{
+		alert("phone field empty");
+		return false;
+	}
+	if(no.length>10||no.length<10)
+		{
+			alert("invalid phone number");
+			return false;
+		}
+	else
+	{
+		for(i=0;i<no.length;i++)
+		{
+			if(!(no.charAt(i)>='0'&&no.charAt(i)<='9'))
+				{
+					alert("enter only numbers in phone field");
+					return false;
+				}
+		}
+	}
+
+	if(adress=="")
+	{
+		alert("Address field empty");
+		return false;
+	}
+
+
+
+	if(ten=="")
+	{
+		alert("tenth percentage field empty");
+		TEN.focus();
+		return false;
+	}
+
+	if(ten<10)
+	{
+		alert("TENTH Percentage must be two digits");
+		TEN.focus();
+	return false;
+	}
+
+	if(puc=="")
+	{
+		alert("PUC percentage field empty");
+		PUC.focus();
+		return false;
+	}
+	if(puc<10)
+	{
+		alert("PUC Percentage must be two digits");
+	PUC.focus();
+	return false;
+	}
+
+	if(degree=="")
+	{
+		alert("degree grade field empty");
+		DEGREE.focus();
+		return false;
+	}
+
+	if(photo=="")
+	{
+		alert("upload photo");
+		PHOTO.focus();
+		return false;
+	}
+
+	if(sign=="")
+	{
+		alert("upload  signature");
+		SIGN.focus();
+		return false;
+	}
+
+	if(resume=="")
+	{
+		alert("upload resume");
+		RESUME.focus();
+		return false;
+	}
+
+	if(strUser==0)
+	{
+		alert("select your specializaation--");
+		return false;
+	}
+
+
+	if(yop=="")
+	{
+		alert("Year of pass field empty");
+		YOP.focus();
+		return false;
+
+	}
+	else if (yop<2020)
+	{
+		alert("not  eligible")
+		YOP.focus();
+		document.getElementById("YOP").value="";
+		return false;
+	}
+	
+	else if (yop>2022)
+	{
+		alert("not  eligible")
+		YOP.focus();
+		document.getElementById("YOP").value="";
+		return false;
+	}
+
+
+
+	if(dob=="")
+	{
+		alert("Year of birth field empty");
+		DOB.focus();
+		return false;
+	}
+
+
+	if ( (skill[0].checked == false ) && ( skill[1].checked == false ) && ( skill[2].checked == false )&&( skill[3].checked == false ))
+	{
+		alert("Please select at least one skill");
+		return false;
+	}
+
+	alert ("success")
+	true;
+	form.reset();
+ }
+ 
+</script>
+</head>
+<body style="">
+<center>
+
+<table border="0.5" bgcolor="">
+<form  name="UserReg" action="User.html" method="post"  onSubmit="return validateForm()"> 
+
+
+<p><center><h2>JOB APPLICATION FORM </h2></center></p>
+
+   <tr> 
+       <td height="28" align="right">First Name :&nbsp;</td>
+       <td height="28"><input type="text"  id="Name" size="25" placeholder="Name"/></td> 
+   </tr>
+   
+    <tr>
+       <td height="28"  align="right">Mail_id :&nbsp;</td>
+      <td height="28"><input type="text" id="e" size="25" placeholder="Mail_id" /></td>
+  </tr>
+   
+  <tr>
+       <td height="28"  align="right">Age  :&nbsp;</td>
+      <td height="28"><input type="text" id="Age" size="25" placeholder="Age" /></td>
+  </tr>
+  
+  
+ <tr>
+       <td height="28"  align="right">Gender  :&nbsp;</td>
+      <td height="28"><input type="radio" name="gender" value="male"> Male
+	 <input type="radio" name="gender" value="female"> Female</td>
+  </tr>
+  
+  
+  <tr>
+       <td height="28"  align="right">Phone_No :&nbsp;</td>
+      <td height="28"><input type="text" id="phone" size="25" placeholder="Phone no" /><td>
+  </tr>
+
+  
+   <tr>
+       <td height="28"  align="right" valign="top">Address  :&nbsp;</td>
+      <td ><textarea rows="3" cols="25" id="ad" placeholder="Address"></textarea><td>
+  </tr>
+  
+   
+   <tr>
+<td height="28" align="right">Photo upload :&nbsp;</td>
+<td height="28"><input type="file" id="PHOTO"/>
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right"> Signature upload :&nbsp;</td>
+<td height="28"><input type="file" id="SIGN"/>
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Resume upload :&nbsp;</td>
+<td height="28"><input type="file" id="RESUME" />
+</td>
+</tr>
+   
+<tr>
+<td height="28" align="right">Tenth :&nbsp;</td>
+<td height="28"><input type="number" id="TEN" placeholder="Percentage" />
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">PUC :&nbsp;</td>
+<td height="28"><input type="number"  id="PUC" placeholder="Percentage"/>
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Degree :&nbsp;</td>
+<td height="28"><input type="text" placeholder="Grade"  id="DEGREE" pattern="[A-C]{1}"/>
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Specialization :&nbsp;</td>
+<td height="28">
+
+<select id="state">
+
+<option value="0">select</option>
+<option value="1">CSE</option>
+<option value="2">IT</option>
+<option value="3" >ECE</option>
+<option value="4">EEE</option>
+<option value="5">CIVIL</option>
+<option value="6">MECHANICAL</option>
+</select>
+</td>
+</tr>
+
+  <tr>
+       <td height="28"  align="right">Year of pass  :&nbsp;</td>
+      <td height="28"><input type="text" id="YOP" placeholder="Pass Year" size="25"  /></td>
+  </tr>
+  
+   <tr>
+       <td height="28"  align="right">Date of Birth  :&nbsp;</td>
+      <td height="28"><input type="date" id="DOB" size="25"  /></td>
+  </tr>
+ 
+	<tr>
+	<td height="28" align="right"> Technical skills :&nbsp;</td>
+	
+	<td height="28"><input type="checkbox" name="skill" value="0" >java
+
+	<input type="checkbox"  name="skill" value="1"> c
+
+	<input type="checkbox" name="skill" value="2"> c++
+
+	<input type="checkbox" name="skill" value="3"> DBMS
+
+	<input type="checkbox" name="skill" value="4"> CCNA
+
+	<input type="checkbox" name="skill" value="5"> Testing
+	
+	</tr>
+	 
+  <tr>
+       <td height="35"></td>
+       <td height="35"><input type="submit" value="sumbit" name="submit"/>
+	  <input type="reset" value="reset" name="reset"  /></td> 
+	
+   </tr>
+</form>
+</table>
+</center>
+</body>
+</html>
